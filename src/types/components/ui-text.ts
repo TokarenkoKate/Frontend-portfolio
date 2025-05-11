@@ -23,6 +23,4 @@ export type UiTextVariant =
   | "body-lg"
   | "heading-xs"
   | "heading-sm"
-  | "heading-md"
-  | "heading-lg"
-  | "heading-xl";
+  | "heading-md";

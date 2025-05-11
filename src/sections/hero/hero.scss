@@ -1,0 +1,152 @@
+$shift-left: 20px;
+$shift-top: 10px;
+$border-w: 1px;
+$clip-content-percent: 8%;
+$description-border: 1px;
+$image-height: 540px;
+
+.hero {
+  padding: var(--space-20);
+  height: calc(100vh - var(--app-navbar-height));
+
+  &__content {
+    height: min-content;
+    position: relative;
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+      padding: var(--space-14) var(--space-8);
+      gap: var(--space-4);
+      background-color: var(--color-secondary-dark);
+      overflow: hidden;
+      clip-path: shape(
+        from 0% 0%,
+        line to 100% 0%,
+        line to 100% 100%,
+        line to $clip-content-percent 100%,
+        line to $clip-content-percent 70%,
+        line to 0% 60%,
+        close
+      );
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      margin: $shift-top 0 0 0;
+      top: 0;
+      left: $clip-content-percent;
+      bottom: 0;
+      right: 0;
+      box-shadow: $shift-left $shift-top 0 0 var(--color-secondary-dark);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      margin: $shift-top 0 0 0;
+      top: 0;
+      left: $clip-content-percent;
+      bottom: 0;
+      right: 0;
+      box-shadow: calc($shift-left + ($border-w * 2))
+          calc($shift-top - ($border-w * 2)) var(--color-white),
+        calc($shift-left - ($border-w * 2)) calc($shift-top + ($border-w * 2))
+          var(--color-white),
+        calc($shift-left + ($border-w * 2)) calc($shift-top + ($border-w * 2))
+          var(--color-white);
+    }
+
+    &-column {
+      height: 100%;
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+  }
+
+  &__titles {
+    gap: var(--space-2);
+    text-transform: uppercase;
+
+    .hero__title {
+      &_accent {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+          width: 100%;
+          height: calc(1em / 2);
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: -10px;
+          background-color: var(--color-accent);
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &__details {
+    max-width: 600px;
+    margin-left: 80px;
+    gap: var(--space-8);
+  }
+
+  &__description {
+    position: relative;
+    padding: var(--space-4);
+    background-color: var(--color-white);
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: $description-border;
+      left: $description-border;
+      width: calc(100% - ($description-border * 2));
+      height: calc(100% - ($description-border * 2));
+      background-color: var(--color-secondary);
+      z-index: -1;
+    }
+
+    &,
+    &::before {
+      clip-path: shape(
+        from 0% 0%,
+        line to 100% 0%,
+        line to 100% calc(100% - 20px),
+        line to calc(100% - 20px) 100%,
+        line to 0% 100%,
+        close
+      );
+    }
+  }
+
+  &__buttons {
+    gap: var(--space-6);
+    align-self: flex-end;
+
+    div {
+      padding: var(--space-2);
+      border: 1px solid var(--color-border);
+      background-color: var(--color-secondary);
+    }
+  }
+
+  &__image {
+    border: 1px solid var(--color-border);
+    height: $image-height;
+  }
+}
