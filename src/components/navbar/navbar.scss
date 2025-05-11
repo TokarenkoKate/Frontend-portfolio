@@ -1,0 +1,35 @@
+.navbar {
+  height: var(--app-navbar-height);
+  background-color: var(--color-secondary-dark);
+
+  &__content {
+    height: 100%;
+    max-width: var(--app-content-width);
+    padding: 0 var(--space-4);
+    margin: 0 auto;
+  }
+
+  &-menu {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      position: relative;
+
+      &-link {
+        position: absolute;
+        inset: 0;
+      }
+
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
