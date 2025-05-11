@@ -1,0 +1,114 @@
+$main-header-height: 70px;
+$section-header-height: 50px;
+$contribution-day-size: 10px;
+
+.about {
+  padding: var(--space-6);
+  height: calc(100vh - var(--app-navbar-height));
+
+  &__body {
+    display: grid;
+    align-items: normal;
+    grid-template-columns: 1fr 0.3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "first first second"
+      "third third third";
+  }
+
+  &__section {
+    align-items: normal;
+
+    &_first {
+      grid-area: first;
+    }
+
+    &_second {
+      grid-area: second;
+    }
+
+    &_third {
+      grid-area: third;
+    }
+  }
+
+  &__content {
+    width: 80vw;
+  }
+
+  //  main header
+  &__header {
+    padding: 0 var(--space-2);
+    height: $main-header-height;
+    background-color: var(--color-secondary-dark);
+    border: 1px solid var(--color-border);
+    text-transform: uppercase;
+  }
+
+  //  sections reusable styles
+  &__section {
+    &-header {
+      height: $section-header-height;
+      padding-left: var(--space-6);
+      border: 1px solid var(--color-border);
+    }
+
+    &-body {
+      height: 100%;
+      padding: var(--space-4);
+      border: 1px solid var(--color-white);
+    }
+  }
+
+  &__list {
+    &-item {
+      border: 1px solid var(--color-white);
+      padding: var(--space-4);
+    }
+
+    &-text {
+      text-transform: uppercase;
+    }
+  }
+
+  &__photo {
+  }
+
+  &__soft-skills {
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__details-header {
+  }
+
+  &__contributions {
+    flex: 1;
+
+    &-day {
+      width: $contribution-day-size;
+      height: $contribution-day-size;
+      border: 0.1px solid var(--color-border);
+      border-radius: 2px;
+
+      &[data-level="1"] {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      &[data-level="2"] {
+        background-color: rgba(255, 255, 255, 0.75);
+      }
+
+      &[data-level="3"] {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+
+  &__empty {
+    flex: 1;
+    border: 1px solid var(--color-border);
+  }
+}

@@ -16,6 +16,7 @@ export interface UiTextProps {
   align?: UiTextAlign;
   className?: string;
   lineClamp?: number;
+  accent?: boolean;
 }
 
 export const UiText = (props: UiTextProps) => {
@@ -27,6 +28,7 @@ export const UiText = (props: UiTextProps) => {
     align,
     lineClamp,
     className,
+    accent,
     ...restProps
   } = props;
 
@@ -36,6 +38,7 @@ export const UiText = (props: UiTextProps) => {
     tone,
     align,
     lineClamp,
+    accent && "accent",
     className
   );
 

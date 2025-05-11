@@ -1,82 +1,97 @@
 .ui-text {
+  position: relative;
   line-height: 1;
   font-weight: 400;
-}
+  z-index: 1;
 
-/*
-* alignment
-*/
-.start {
-  text-align: start;
-}
+  /*
+  * alignment
+  */
+  &.start {
+    text-align: start;
+  }
 
-.center {
-  text-align: center;
-}
+  &.center {
+    text-align: center;
+  }
 
-.end {
-  text-align: end;
-}
+  &.end {
+    text-align: end;
+  }
 
-.justify {
-  text-align: justify;
-}
+  &.justify {
+    text-align: justify;
+  }
 
-/*
-* tones
-*/
-.base {
-  color: var(--color-text-primary);
-}
+  /*
+  * tones
+  */
+  &.base {
+    color: var(--color-text-primary);
+  }
 
-.secondary {
-  color: var(--color-text-secondary);
-}
+  &.secondary {
+    color: var(--color-text-secondary);
+  }
 
-/*
-* variants
-*/
-.body-xs {
-  font-size: var(--fs-100);
-}
+  /*
+  * variants
+  */
+  &.body-xs {
+    font-size: var(--fs-100);
+  }
 
-.body-sm {
-  font-size: var(--fs-200);
-}
+  &.body-sm {
+    font-size: var(--fs-200);
+  }
 
-.body-md {
-  font-size: var(--fs-300);
-}
+  &.body-md {
+    font-size: var(--fs-300);
+  }
 
-.body-lg {
-  font-size: var(--fs-400);
-}
+  &.body-lg {
+    font-size: var(--fs-400);
+  }
 
-.heading-xs {
-  font-size: var(--fs-500);
-}
+  &.heading-xs {
+    font-size: var(--fs-500);
+  }
 
-.heading-sm {
-  font-size: var(--fs-600);
-}
+  &.heading-sm {
+    font-size: var(--fs-600);
+  }
 
-.heading-md {
-  font-size: var(--fs-700);
-}
+  &.heading-md {
+    font-size: var(--fs-700);
+  }
 
-.heading-lg {
-  font-size: var(--fs-800);
-}
+  &.heading-lg {
+    font-size: var(--fs-800);
+  }
 
-/*
-* features
-*/
-.truncate {
-  --no-of-lines: 0;
+  /*
+  * features
+  */
+  &.truncate {
+    --no-of-lines: 0;
 
-  display: -webkit-box;
-  -webkit-line-clamp: var(--no-of-lines);
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--no-of-lines);
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &.accent {
+    &::before {
+      width: 100%;
+      height: calc(1em / 2);
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: -10px;
+      background-color: var(--color-accent);
+      z-index: -1;
+    }
+  }
 }
