@@ -1,0 +1,45 @@
+@use "reset";
+@use "fonts";
+@use "typography";
+@use "spacing";
+@use "colors";
+@use "components";
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: "Jersey10", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  color: var(--color-text-primary);
+  background-color: var(--color-primary);
+  font-size: var(--fs-300);
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  &__main {
+    width: 100%;
+    max-width: var(--app-content-width);
+    margin: 0 auto;
+    flex: 1;
+  }
+}

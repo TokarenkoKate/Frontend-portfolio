@@ -1,0 +1,19 @@
+/**
+* list of colors in semantic approach,
+*/
+:root {
+  /* main colors */
+  --color-white: #ffffff;
+  --color-primary: #030238; /* Main color that occupies around 60% of page, e.g., background */
+  --color-secondary: #111b52; /* Complementary color that occupies around 30% of page, e.g., inputs, drawer, cards background */
+  --color-secondary-dark: #0d0028; /* Darker secondary, e.g., footer background */
+  --color-accent: #0000ff; /* Accent color, occupies around 10% of page, e.g. accent features */
+
+  /* typography */
+  --color-text-primary: #ffffff; /* Main text color */
+  --color-text-secondary: #848484; /* Text color for secondary information */
+  --color-link: #337ab7; /* Text color for links */
+
+  /* border */
+  --color-border: #ffffff; /** Border color */
+}
