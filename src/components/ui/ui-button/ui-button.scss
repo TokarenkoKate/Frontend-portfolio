@@ -1,0 +1,120 @@
+$button-size-m: 56px;
+$button-size-m-width: 175px;
+$button-border: 2px;
+$shift-1: 3px;
+$shift-2: 10px;
+$shift-3: 15px;
+
+.ui-button {
+  height: $button-size-m;
+  width: $button-size-m-width;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  position: relative;
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  outline-color: transparent;
+  transition: all 0.2s;
+  text-align: start;
+  user-select: none;
+  font-size: var(--fs-300);
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /** variants */
+  &.background {
+    color: var(--color-secondary-dark);
+    background-color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    &:active {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+    }
+  }
+
+  &.outlined {
+    color: var(--color-text-primary);
+    background-color: var(--color-white);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: $button-border;
+      left: $button-border;
+      width: calc(100% - calc($button-border * 2));
+      height: calc(100% - calc($button-border * 2));
+      background-color: var(--color-secondary);
+      z-index: -1;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      &::before {
+        background-color: var(--color-primary);
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: var(--color-accent);
+      }
+    }
+  }
+
+  &,
+  &::before {
+    clip-path: shape(
+      from calc(0% + $shift-1) 0%,
+      line to calc(100% - $shift-1) 0%,
+      line to calc(100% - $shift-1) calc(50% - $shift-3),
+      line to 100% calc(50% - $shift-2),
+      line to 100% calc(50% + $shift-2),
+      line to calc(100% - $shift-1) calc(50% + $shift-3),
+      line to calc(100% - $shift-1) 100%,
+      line to calc(0% + $shift-1) 100%,
+      line to calc(0% + $shift-1) calc(50% + $shift-3),
+      line to 0% calc(50% + $shift-2),
+      line to 0% calc(50% - $shift-2),
+      line to calc(0% + $shift-1) calc(50% - $shift-3),
+      close
+    );
+  }
+
+  &.right,
+  &.right::before {
+    clip-path: shape(
+      from 0% 0%,
+      line to calc(100% - $shift-1) 0%,
+      line to calc(100% - $shift-1) calc(50% - $shift-3),
+      line to 100% calc(50% - $shift-2),
+      line to 100% calc(50% + $shift-2),
+      line to calc(100% - $shift-1) calc(50% + $shift-3),
+      line to calc(100% - $shift-1) 100%,
+      line to 0% 100%,
+      line to 0% calc(50% + $shift-3),
+      line to calc(0% + $shift-1) calc(50% + $shift-2),
+      line to calc(0% + $shift-1) calc(50% - $shift-2),
+      line to 0% calc(50% - $shift-3),
+      close
+    );
+  }
+
+  &.round {
+    padding: 0;
+    width: $button-size-m;
+    border-radius: 50%;
+    clip-path: none;
+  }
+}
