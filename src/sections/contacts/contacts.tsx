@@ -8,7 +8,12 @@ import "./contacts.scss";
 
 export const Contacts = () => {
   return (
-    <UiVStack className="contacts" align="center" justify="center">
+    <UiVStack
+      className="contacts panel"
+      align="center"
+      justify="center"
+      as="section"
+    >
       <UiVStack className="contacts__body">
         <UiText variant="heading-md">Want to work together?</UiText>
         <UiText>

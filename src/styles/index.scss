@@ -14,6 +14,7 @@ body,
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
   color: var(--color-text-primary);
   background-color: var(--color-primary);
   font-size: var(--fs-300);
+  overflow: hidden;
 }
 
 .app {
@@ -40,5 +42,11 @@ body {
     width: 100%;
     margin: 0 auto;
     flex: 1;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  .panel {
+    scroll-snap-align: start;
   }
 }

@@ -6,7 +6,7 @@ import "./skills.scss";
 
 export const Skills = () => {
   return (
-    <UiVStack className="skills" as="section">
+    <UiVStack className="skills panel" as="section">
       <SectionHeader
         title="Skills"
         icon={SkillsIcon}

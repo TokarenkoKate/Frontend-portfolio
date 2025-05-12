@@ -14,7 +14,7 @@ export const About = () => {
   return (
     <UiVStack
       as="section"
-      className="about"
+      className="about panel"
       align="center"
       justify="center"
       max
@@ -25,6 +25,7 @@ export const About = () => {
           icon={AboutIcon}
           className="work__header"
         />
+
         <div className="about__body">
           <UiVStack className="about__section about__section_first">
             <AboutList />

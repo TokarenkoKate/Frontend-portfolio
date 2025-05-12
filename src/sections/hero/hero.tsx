@@ -9,7 +9,7 @@ import "./hero.scss";
 
 export const Hero = () => {
   return (
-    <UiVStack className="hero" as="section" align="center">
+    <UiVStack className="hero panel" as="section" align="center">
       <div className="hero__content">
         <UiHStack className="hero__content-inner">
           <UiVStack className="hero__content-column">
