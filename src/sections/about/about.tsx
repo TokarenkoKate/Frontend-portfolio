@@ -1,8 +1,7 @@
 import AboutIcon from "@/assets/icons/about.svg";
 import { UiVStack } from "@/components/ui/ui-stack/ui-vstack/ui-vstack";
 import { UiHStack } from "@/components/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiIcon } from "@/components/ui/ui-icon/ui-icon";
-import { UiText } from "@/components/ui/ui-text/ui-text";
+import { SectionHeader } from "@/components/section-header/section-header";
 import { AboutList } from "./about-list";
 import { AboutSoftSkills } from "./about-soft-skills";
 import { AboutPhoto } from "./about-photo";
@@ -21,12 +20,11 @@ export const About = () => {
       max
     >
       <div className="about__content">
-        <UiHStack className="about__header" align="center">
-          <UiIcon Svg={AboutIcon} />
-          <UiText className="about__title" variant="heading-sm" accent>
-            About me
-          </UiText>
-        </UiHStack>
+        <SectionHeader
+          title="About me"
+          icon={AboutIcon}
+          className="work__header"
+        />
         <div className="about__body">
           <UiVStack className="about__section about__section_first">
             <AboutList />

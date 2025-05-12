@@ -13,14 +13,8 @@ $tabs-gap: var(--space-6);
   border: 1px solid var(--color-white);
 
   &__header {
-    height: var(--app-section-header-height);
-    padding: var(--space-4);
-    gap: var(--space-4);
-    background-color: var(--color-secondary-dark);
-    border: 1px solid var(--color-border);
     border-left: none;
     border-right: none;
-    text-transform: uppercase;
   }
 
   &__body {

@@ -1,0 +1,15 @@
+$icon-size: 38px;
+
+.section-header {
+  height: var(--app-section-header-height);
+  padding: var(--space-4);
+  gap: var(--space-4);
+  background-color: var(--color-secondary-dark);
+  border: 1px solid var(--color-border);
+  text-transform: uppercase;
+
+  &__icon {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
