@@ -26,7 +26,7 @@ $card-side-panel-top: calc(
   &__grid {
     width: 100%;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     gap: var(--space-20);
     grid-template-columns: repeat(auto-fit, minmax($skill-card-min-w, 1fr));
     padding: var(--space-16) var(--space-28);
@@ -75,6 +75,10 @@ $card-side-panel-top: calc(
     &__header {
       margin-bottom: var(--space-8);
       gap: var(--space-6);
+    }
+
+    &__title {
+      text-transform: uppercase;
     }
 
     &__icon {

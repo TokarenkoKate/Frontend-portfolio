@@ -1,0 +1,59 @@
+$project-card-min-w: 400px;
+
+.projects {
+  min-height: var(--app-section-height);
+  border: 1px solid var(--color-white);
+
+  &__header {
+    border-left: none;
+    border-right: none;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax($project-card-min-w, 1fr));
+    gap: var(--space-10);
+    padding: var(--space-16) var(--space-28);
+  }
+
+  .project-card {
+    border: 1px solid var(--color-white);
+    width: $project-card-min-w;
+
+    &__image {
+      width: 100%;
+      height: calc($project-card-min-w / (3 / 2));
+    }
+
+    &__body {
+      width: 100%;
+      padding: var(--space-2) var(--space-6);
+      gap: var(--space-4);
+    }
+
+    &__technologies {
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    &__features {
+      gap: var(--space-4);
+      list-style-image: url("../../assets/icons/list-marker.svg");
+
+      li {
+        padding-left: var(--space-4);
+      }
+    }
+
+    &__feature {
+      z-index: 1;
+
+      &_highlight {
+        background-color: var(--color-accent);
+      }
+    }
+  }
+}

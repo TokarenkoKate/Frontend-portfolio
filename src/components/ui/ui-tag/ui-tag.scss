@@ -5,6 +5,7 @@
   padding: var(--space-0-5) var(--space-2);
   background-color: var(--ui-tag-background);
   border: var(--ui-tag-border-color);
+  text-transform: uppercase;
 
   &.dashed {
     --ui-tag-background: transparent;

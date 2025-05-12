@@ -17,7 +17,9 @@ export const SkillCard = ({ title, icon, tags }: SkillCardProps) => {
         <UiHStack className="skill-card__icon" align="center" justify="center">
           <UiIcon Svg={icon} />
         </UiHStack>
-        <UiText variant="body-lg">{title}</UiText>
+        <UiText variant="body-lg" className="skill-card__title">
+          {title}
+        </UiText>
       </UiHStack>
       <UiHStack className="skill-card__tags">
         {tags.map((tag) => {

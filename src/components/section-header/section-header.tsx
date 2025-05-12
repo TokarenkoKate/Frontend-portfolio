@@ -22,7 +22,7 @@ export const SectionHeader = ({
       max
     >
       <UiIcon Svg={icon} className="section-header__icon" />
-      <UiText variant="heading-sm" accent>
+      <UiText variant="heading-sm" accent className="section-header__title">
         {title}
       </UiText>
     </UiHStack>

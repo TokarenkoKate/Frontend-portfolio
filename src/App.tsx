@@ -5,6 +5,7 @@ import { Hero } from "@/sections/hero/hero";
 import { About } from "@/sections/about/about";
 import { Work } from "@/sections/work/work";
 import { Skills } from "@/sections/skills/skills";
+import { Projects } from "@/sections/projects/projects";
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
           <About />
           <Work />
           <Skills />
+          <Projects />
         </main>
         <Footer />
       </div>
