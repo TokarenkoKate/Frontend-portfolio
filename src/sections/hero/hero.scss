@@ -121,14 +121,8 @@ $image-height: 540px;
   }
 
   &__buttons {
-    gap: var(--space-6);
+    gap: var(--space-3);
     align-self: flex-end;
-
-    div {
-      padding: var(--space-2);
-      border: 1px solid var(--color-border);
-      background-color: var(--color-secondary);
-    }
   }
 
   &__image {

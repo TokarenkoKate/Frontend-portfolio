@@ -6,6 +6,7 @@ import { About } from "@/sections/about/about";
 import { Work } from "@/sections/work/work";
 import { Skills } from "@/sections/skills/skills";
 import { Projects } from "@/sections/projects/projects";
+import { Contacts } from "./sections/contacts/contacts";
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
           <Work />
           <Skills />
           <Projects />
+          <Contacts />
         </main>
         <Footer />
       </div>

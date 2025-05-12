@@ -1,0 +1,47 @@
+$shift-top: 10px;
+$shift-left: 20px;
+
+.contacts {
+  padding: var(--space-6);
+  height: var(--app-section-height);
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--color-white);
+    background-color: var(--color-secondary);
+    gap: var(--space-4);
+    width: 80%;
+    padding: var(--space-16) var(--space-14);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      z-index: -1;
+      background-color: var(--color-white);
+    }
+
+    &::before {
+      top: $shift-left;
+      left: 100%;
+      width: $shift-left;
+      height: calc(100% - $shift-top);
+    }
+
+    &::after {
+      top: 100%;
+      left: $shift-left;
+      width: calc(100% - $shift-left);
+      height: $shift-top;
+    }
+  }
+
+  &__socials {
+    gap: var(--space-16);
+  }
+
+  &__links {
+    gap: var(--space-8);
+  }
+}
