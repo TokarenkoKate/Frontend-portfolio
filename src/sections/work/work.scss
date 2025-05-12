@@ -1,0 +1,109 @@
+@use "/src/styles/mixins/tabs" as *;
+
+$card-width: 360px;
+$card-height: 200px;
+$card-v-p: var(--space-4);
+$card-h-p: var(--space-8);
+$card-icon-size: var(--space-5);
+$tab-panel-w: var(--space-4);
+$tabs-gap: var(--space-6);
+
+.work {
+  height: var(--app-section-height);
+  border: 1px solid var(--color-white);
+
+  &__header {
+    height: var(--app-section-header-height);
+    padding: var(--space-4);
+    gap: var(--space-4);
+    background-color: var(--color-secondary-dark);
+    border: 1px solid var(--color-border);
+    border-left: none;
+    border-right: none;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    height: 100%;
+  }
+
+  &__positions {
+    position: relative;
+    gap: var(--space-6);
+    padding: $card-v-p $card-h-p;
+
+    &::after {
+      width: $tab-panel-w;
+      height: $card-height;
+      position: absolute;
+      right: $tab-panel-w;
+      content: "";
+      background-color: var(--color-accent);
+      transition: 0.2s top ease;
+
+      @include tabPanelTopPosition(
+        var(--working-position-index),
+        $card-height,
+        $card-v-p,
+        $tabs-gap
+      );
+    }
+  }
+
+  &-position-card {
+    width: $card-width;
+    height: $card-height;
+    background: var(--color-secondary);
+    padding: var(--space-5);
+    transition: 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-secondary-dark);
+      border-color: var(--color-white);
+    }
+
+    &__header {
+      gap: var(--space-4);
+      margin-bottom: var(--space-2);
+    }
+
+    &__icon {
+      min-width: $card-icon-size;
+      height: $card-icon-size;
+    }
+
+    &__divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-white);
+      margin-bottom: var(--space-6);
+    }
+
+    &__column {
+      gap: var(--space-4);
+    }
+  }
+
+  &__responsibilities {
+    height: 100%;
+    padding: var(--space-4) var(--space-8);
+    border-left: 1px solid var(--color-white);
+    max-width: 800px;
+
+    &-title {
+      margin-bottom: var(--space-8);
+    }
+
+    &-list {
+      padding-left: var(--space-8);
+      gap: var(--space-8);
+      list-style-image: url("../../assets/icons/list-marker.svg");
+
+      li {
+        padding-left: var(--space-4);
+      }
+    }
+  }
+}

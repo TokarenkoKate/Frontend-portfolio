@@ -1,10 +1,9 @@
-$main-header-height: 70px;
 $section-header-height: 50px;
 $contribution-day-size: 10px;
 
 .about {
   padding: var(--space-6);
-  height: calc(100vh - var(--app-navbar-height));
+  height: var(--app-section-height);
 
   &__body {
     display: grid;
@@ -39,7 +38,7 @@ $contribution-day-size: 10px;
   //  main header
   &__header {
     padding: 0 var(--space-2);
-    height: $main-header-height;
+    height: var(--app-section-header-height);
     background-color: var(--color-secondary-dark);
     border: 1px solid var(--color-border);
     text-transform: uppercase;

@@ -1,5 +1,9 @@
 .ui-flex {
   display: flex;
+
+  &.max {
+    width: 100%;
+  }
 }
 
 .justify-start {

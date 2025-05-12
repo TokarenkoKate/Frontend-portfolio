@@ -37,6 +37,7 @@ export const UiFlex = forwardRef<HTMLElement, UiFlexProps>(function UiFlex(
     justify = "start",
     align = "start",
     direction = "row",
+    max,
     className,
     ...restProps
   } = props;
@@ -45,6 +46,7 @@ export const UiFlex = forwardRef<HTMLElement, UiFlexProps>(function UiFlex(
     justify && justifyClasses[justify],
     align && alignClasses[align],
     direction && directionClasses[direction],
+    max && "max",
     className,
   ];
 

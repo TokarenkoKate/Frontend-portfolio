@@ -1,0 +1,12 @@
+@mixin tabPanelTopPosition(
+  $tabIndex,
+  $panelHeight,
+  $panelsTopPadding,
+  $panelsGap
+) {
+  @if $tabIndex == 0 {
+    top: $panelsTopPadding;
+  } @else {
+    top: calc($tabIndex * ($panelHeight + $panelsGap) + $panelsTopPadding);
+  }
+}
