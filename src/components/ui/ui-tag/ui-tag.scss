@@ -1,0 +1,18 @@
+.ui-tag {
+  --ui-tag-background: transparent;
+  --ui-tag-border-color: transparent;
+
+  padding: var(--space-0-5) var(--space-2);
+  background-color: var(--ui-tag-background);
+  border: var(--ui-tag-border-color);
+
+  &.dashed {
+    --ui-tag-background: transparent;
+    --ui-tag-border-color: 1px dashed var(--color-white);
+  }
+
+  &.solid {
+    --ui-tag-background: var(--color-secondary-dark);
+    --ui-tag-border-color: 1px solid var(--color-white);
+  }
+}
