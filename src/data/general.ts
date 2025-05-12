@@ -1,5 +1,6 @@
 import WorkMarkerOne from "@/assets/icons/work-marker-one.svg";
 import WorkMarkerTwo from "@/assets/icons/work-marker-two.svg";
+import SkillsProgramming from "@/assets/icons/skills-programming.svg";
 
 export const aboutSectionListItems = [
   {
@@ -48,5 +49,28 @@ export const workExperienceItems = [
       "Incorporation of accommodation links to third-party services like Booking.com and Airbnb, enhancing user convenience in lodging reservations.",
     ],
     icon: WorkMarkerTwo,
+  },
+];
+
+export const skillsItems = [
+  {
+    title: "programming languages",
+    icon: SkillsProgramming,
+    tags: ["javascript", "typescript", "react.js", "next.js", "node.js"],
+  },
+  {
+    title: "skill 2",
+    icon: SkillsProgramming,
+    tags: ["javascript", "typescript", "react.js", "next.js", "node.js"],
+  },
+  {
+    title: "skill 3",
+    icon: SkillsProgramming,
+    tags: ["javascript", "typescript", "react.js", "next.js", "node.js"],
+  },
+  {
+    title: "skill 4",
+    icon: SkillsProgramming,
+    tags: ["javascript", "typescript", "react.js", "next.js", "node.js"],
   },
 ];

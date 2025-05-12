@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer/footer";
 import { Hero } from "@/sections/hero/hero";
 import { About } from "@/sections/about/about";
 import { Work } from "@/sections/work/work";
+import { Skills } from "@/sections/skills/skills";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
           <Hero />
           <About />
           <Work />
+          <Skills />
         </main>
         <Footer />
       </div>

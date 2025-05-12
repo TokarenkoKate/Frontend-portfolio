@@ -1,0 +1,121 @@
+$skill-card-min-w: 300px;
+$skill-card-border: 4px;
+$shift-1: 5px;
+$shift-2: 10px;
+$shift-3: 15px;
+$shift-4: 18px;
+$shift-5: 36px;
+$shift-6: 50px;
+$shift-7: 80px;
+$shift-8: 90px;
+$card-side-panel-width: 5px;
+$card-side-panel-height: calc((100% - ($shift-4 * 2)) * 0.8);
+$card-side-panel-top: calc(
+  (100% - ($shift-4 * 2) - $card-side-panel-height) / 2 + $shift-4
+);
+
+.skills {
+  height: var(--app-section-height);
+  border: 1px solid var(--color-white);
+
+  &__header {
+    border-left: none;
+    border-right: none;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    gap: var(--space-20);
+    grid-template-columns: repeat(auto-fit, minmax($skill-card-min-w, 1fr));
+    padding: var(--space-16) var(--space-28);
+  }
+
+  .skill-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-white);
+    padding: var(--space-6);
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: $skill-card-border;
+      left: 0;
+      width: calc(100% - 0px);
+      height: calc(100% - calc($skill-card-border * 2));
+      background-color: var(--color-secondary);
+      z-index: -1;
+    }
+
+    &,
+    &::before {
+      clip-path: shape(
+        from 0% calc(0% + $shift-4),
+        line to calc(0% + $shift-2) calc(0% + $shift-2),
+        line to calc(0% + $shift-5) calc(0% + $shift-2),
+        line to calc(0% + $shift-6) 0%,
+        line to calc(0% + $shift-7) 0%,
+        line to calc(0% + $shift-8) calc(0% + $shift-1),
+        line to calc(100% - $shift-8) calc(0% + $shift-1),
+        line to calc(100% - $shift-7) 0%,
+        line to calc(100% - $shift-6) 0%,
+        line to calc(100% - $shift-5) calc(0% + $shift-2),
+        line to calc(100% - $shift-2) calc(0% + $shift-2),
+        line to 100% calc(0% + $shift-4),
+        line to 100% calc(100% - $shift-3),
+        line to calc(100% - $shift-3) 100%,
+        line to calc(0% + $shift-3) 100%,
+        line to 0% calc(100% - $shift-3),
+        line to 0% 100%
+      );
+    }
+
+    &__header {
+      margin-bottom: var(--space-8);
+      gap: var(--space-6);
+    }
+
+    &__icon {
+      padding: var(--space-4);
+      background-color: var(--color-accent);
+      width: 50px;
+      height: 42px;
+      clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    &__tags {
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    &__side-panel {
+      position: absolute;
+      height: $card-side-panel-height;
+      top: $card-side-panel-top;
+      left: 0;
+      width: $card-side-panel-width;
+      background-color: var(--color-accent);
+      clip-path: shape(
+        from 0% 0%,
+        line to 100% calc(0% + $shift-1),
+        line to 100% calc(100% - $shift-1),
+        line to 0% 100%,
+        close
+      );
+
+      &_right {
+        left: unset;
+        right: 0;
+        clip-path: shape(
+          from 0% calc(0% + $shift-1),
+          line to 100% 0%,
+          line to 100% 100%,
+          line to 0% calc(100% - $shift-1),
+          close
+        );
+      }
+    }
+  }
+}
