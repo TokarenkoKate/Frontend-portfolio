@@ -16,14 +16,22 @@
     gap: var(--space-4);
 
     &__item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      position: relative;
+      list-style: none;
+      transition: 0.2s background-color ease-in-out;
 
-      &-link {
-        position: absolute;
-        inset: 0;
+      &:hover {
+        background-color: var(--color-accent-light);
+      }
+
+      &:active {
+        background-color: var(--color-accent);
+      }
+
+      &-content {
+        display: flex;
+        align-items: center;
+        padding: var(--space-0-5) var(--space-1);
+        gap: var(--space-1);
       }
     }
 
@@ -46,12 +54,13 @@
 }
 
 .menu-sidebar {
+  padding: var(--space-10);
   color: var(--color-secondary-dark);
   height: 100%;
+  gap: var(--space-5);
 
   &__header {
     border-bottom: 1px solid var(--color-border-dark);
-    padding: var(--space-10);
   }
 
   &__list {

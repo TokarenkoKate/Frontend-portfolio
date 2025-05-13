@@ -17,6 +17,7 @@ export const About = () => {
       className="about panel"
       align="center"
       justify="center"
+      id="about"
       max
     >
       <div className="about__content">

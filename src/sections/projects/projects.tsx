@@ -6,7 +6,12 @@ import "./projects.scss";
 
 export const Projects = () => {
   return (
-    <UiVStack className="projects panel" as="section" align="center">
+    <UiVStack
+      className="projects panel"
+      as="section"
+      align="center"
+      id="projects"
+    >
       <SectionHeader
         title="Featured projects"
         icon={SkillsIcon}

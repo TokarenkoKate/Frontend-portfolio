@@ -8,12 +8,12 @@ import MarkerFive from "@/assets/icons/marker-five.svg";
 export const navbarMenuItems: NavbarMenuItemType[] = [
   {
     label: "about me",
-    path: "#about-me",
+    path: "#about",
     icon: MarkerOne,
   },
   {
     label: "working experience",
-    path: "#working-experience",
+    path: "#work",
     icon: MarkerTwo,
   },
   {
@@ -23,7 +23,7 @@ export const navbarMenuItems: NavbarMenuItemType[] = [
   },
   {
     label: "featured projects",
-    path: "#featured-projects",
+    path: "#projects",
     icon: MarkerFour,
   },
 ];

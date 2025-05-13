@@ -13,6 +13,7 @@ export const Contacts = () => {
       align="center"
       justify="center"
       as="section"
+      id="contacts"
     >
       <UiVStack className="contacts__body">
         <UiText variant="heading-md">Want to work together?</UiText>

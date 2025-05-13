@@ -4,16 +4,18 @@ import type { NavbarMenuItemType } from "@/types/components/navbar-menu-item";
 
 type NavbarMenuItemProps = {
   menuItem: NavbarMenuItemType;
+  onClick?: VoidFunction;
 };
 
-export const NavbarMenuItem = ({ menuItem }: NavbarMenuItemProps) => {
+export const NavbarMenuItem = ({ menuItem, onClick }: NavbarMenuItemProps) => {
   const { label, path, icon } = menuItem;
 
   return (
     <li className="navbar-menu__item">
-      <UiIcon Svg={icon} />
-      <UiText>{label}</UiText>
-      <a href={path} className="navbar-menu__item-link" />
+      <a href={path} className="navbar-menu__item-content" onClick={onClick}>
+        <UiIcon Svg={icon} />
+        <UiText>{label}</UiText>
+      </a>
     </li>
   );
 };

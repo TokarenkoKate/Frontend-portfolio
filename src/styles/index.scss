@@ -14,7 +14,6 @@ body,
 }
 
 html {
-  scroll-behavior: smooth;
   overflow: hidden;
 }
 
@@ -45,6 +44,7 @@ body {
     flex: 1;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
   .panel {

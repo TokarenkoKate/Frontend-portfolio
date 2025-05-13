@@ -13,8 +13,16 @@ export const HeroDetails = () => {
         </UiText>
       </div>
       <UiHStack className="hero__buttons">
-        <UiButton variant="outlined">Contacts</UiButton>
-        <UiButton variant="outlined" direction="right">
+        <UiButton variant="outlined" asLink href="#projects" target="_self">
+          Projects
+        </UiButton>
+        <UiButton
+          variant="outlined"
+          direction="right"
+          asLink
+          href="#contacts"
+          target="_self"
+        >
           Contacts
         </UiButton>
       </UiHStack>

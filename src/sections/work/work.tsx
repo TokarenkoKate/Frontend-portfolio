@@ -16,7 +16,7 @@ export const Work = () => {
   };
 
   return (
-    <UiVStack className="work panel" as="section">
+    <UiVStack className="work panel" as="section" id="work">
       <SectionHeader
         title="Working experience"
         icon={WorkIcon}

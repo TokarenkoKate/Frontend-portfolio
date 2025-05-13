@@ -39,7 +39,11 @@ export const MenuSidebar = ({ isOpen, onClose }: MenuSidebarProps) => {
             </UiHStack>
             <UiVStack className="menu-sidebar__list" as="ul">
               {navbarMenuItems.map((menuItem) => (
-                <NavbarMenuItem menuItem={menuItem} key={menuItem.label} />
+                <NavbarMenuItem
+                  menuItem={menuItem}
+                  key={menuItem.label}
+                  onClick={closeSidebar}
+                />
               ))}
             </UiVStack>
           </UiVStack>
