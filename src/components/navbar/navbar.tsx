@@ -1,12 +1,19 @@
+import { navbarMenuContacts } from "@/data/navbar-menu-items";
+import { UiHStack } from "@/components/ui/ui-stack/ui-hstack/ui-hstack";
+import { NavbarMenu } from "./menu/navbar-menu";
+import { NavbarMenuItem } from "./menu/navbar-menu-item";
 import "./navbar.scss";
-import { NavbarMenu } from "./navbar-menu";
 
 export const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar__content">
+      <UiHStack className="navbar__content" justify="between" align="center">
         <NavbarMenu />
-      </div>
+        <NavbarMenuItem
+          menuItem={navbarMenuContacts}
+          key={navbarMenuContacts.label}
+        />
+      </UiHStack>
     </nav>
   );
 };

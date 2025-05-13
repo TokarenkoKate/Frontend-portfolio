@@ -24,7 +24,7 @@ export const Contacts = () => {
           <UiButton variant="outlined">Send and email</UiButton>
           <UiHStack className="contacts__links">
             {contactDetails.map(({ href, icon }) => (
-              <UiButton href={href} asLink round>
+              <UiButton href={href} asLink round key={href}>
                 <UiIcon Svg={icon} />
               </UiButton>
             ))}

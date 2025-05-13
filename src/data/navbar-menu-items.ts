@@ -26,9 +26,10 @@ export const navbarMenuItems: NavbarMenuItemType[] = [
     path: "#featured-projects",
     icon: MarkerFour,
   },
-  {
-    label: "contacts",
-    path: "#contacts",
-    icon: MarkerFive,
-  },
 ];
+
+export const navbarMenuContacts = {
+  label: "contacts",
+  path: "#contacts",
+  icon: MarkerFive,
+};

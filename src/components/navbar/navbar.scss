@@ -1,3 +1,5 @@
+@use "/src/styles/mixins/responsive" as *;
+
 .navbar {
   height: var(--app-navbar-height);
   background-color: var(--color-secondary-dark);
@@ -11,9 +13,6 @@
 
   &-menu {
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: var(--space-4);
 
     &__item {
@@ -26,10 +25,36 @@
         position: absolute;
         inset: 0;
       }
+    }
 
-      &:last-child {
-        margin-left: auto;
+    &_desktop {
+      display: none;
+
+      @include responsive("medium") {
+        display: flex;
       }
     }
+
+    &_mobile {
+      display: flex;
+
+      @include responsive("medium") {
+        display: none;
+      }
+    }
+  }
+}
+
+.menu-sidebar {
+  color: var(--color-secondary-dark);
+  height: 100%;
+
+  &__header {
+    border-bottom: 1px solid var(--color-border-dark);
+    padding: var(--space-10);
+  }
+
+  &__list {
+    gap: var(--space-3);
   }
 }

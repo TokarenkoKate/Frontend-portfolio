@@ -4,7 +4,7 @@ import type {
   ReactNode,
 } from "react";
 
-export type UiButtonVariant = "background" | "outlined";
+export type UiButtonVariant = "background" | "outlined" | "clear";
 export type UiButtonDirection = "left" | "middle" | "right";
 
 type ExternalNavigationProps = Pick<

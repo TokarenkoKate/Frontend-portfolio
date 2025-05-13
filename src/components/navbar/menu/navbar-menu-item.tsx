@@ -1,6 +1,6 @@
+import { UiIcon } from "@/components/ui/ui-icon/ui-icon";
+import { UiText } from "@/components/ui/ui-text/ui-text";
 import type { NavbarMenuItemType } from "@/types/components/navbar-menu-item";
-import { UiIcon } from "../ui/ui-icon/ui-icon";
-import { UiText } from "../ui/ui-text/ui-text";
 
 type NavbarMenuItemProps = {
   menuItem: NavbarMenuItemType;

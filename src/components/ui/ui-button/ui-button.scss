@@ -5,6 +5,8 @@ $button-size-s: 40px;
 $button-size-m-width: 175px;
 $button-size-s-width: 120px;
 $button-border: 2px;
+$button-icon-size: 30px;
+$button-icon-size-s: 20px;
 $shift-1: 3px;
 $shift-2: 10px;
 $shift-3: 15px;
@@ -34,8 +36,13 @@ $shift-3: 15px;
   }
 
   svg {
-    width: 30px;
-    height: 30px;
+    width: $button-icon-size-s;
+    height: $button-icon-size-s;
+
+    @include responsive("medium") {
+      width: $button-icon-size;
+      height: $button-icon-size;
+    }
   }
 
   /** variants */
@@ -81,6 +88,13 @@ $shift-3: 15px;
         background-color: var(--color-accent);
       }
     }
+  }
+
+  &.clear {
+    color: var(--color-white);
+    width: auto;
+    height: auto;
+    background-color: transparent;
   }
 
   &,
