@@ -1,8 +1,14 @@
-$project-card-min-w: 400px;
+@use "/src/styles/mixins/responsive" as *;
 
 .projects {
+  --project-card-min-w: 100%;
+
   min-height: var(--app-section-height);
   border: var(--app-border);
+
+  @include responsive("small") {
+    --project-card-min-w: 380px;
+  }
 
   &__header {
     border-left: none;
@@ -10,21 +16,33 @@ $project-card-min-w: 400px;
   }
 
   &__grid {
-    width: var(--app-body-width);
+    width: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax($project-card-min-w, 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(var(--project-card-min-w), 1fr)
+    );
     gap: var(--space-10);
-    padding: var(--space-16) 0;
+    padding: var(--app-h-padding-small);
+
+    @include responsive("medium") {
+      padding: var(--app-h-padding-medium);
+    }
+
+    @include responsive("large") {
+      width: var(--app-body-width);
+      padding: var(--app-h-padding);
+    }
   }
 
   .project-card {
     border: var(--app-border);
-    width: $project-card-min-w;
+    width: var(--project-card-min-w);
 
     &__image {
       width: 100%;
-      height: calc($project-card-min-w / (3 / 2));
+      height: calc(var(--project-card-min-w) / (3 / 2));
     }
 
     &__body {
