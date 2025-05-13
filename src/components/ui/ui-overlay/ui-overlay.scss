@@ -1,0 +1,10 @@
+.ui-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: var(--app-color-overlay);
+  z-index: var(--z-indices-overlay);
+  cursor: pointer;
+}

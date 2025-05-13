@@ -1,0 +1,38 @@
+$ui-sidebar-min-width: 420px;
+
+.ui-sidebar {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  &__content {
+    height: 100%;
+    width: $ui-sidebar-min-width;
+    background-color: var(--color-white);
+    transition: 0.3s transform;
+    transform: translate($ui-sidebar-min-width);
+    z-index: var(--z-indices-sidebar);
+  }
+
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: var(--z-indices-sidebar);
+
+    .ui-sidebar__content {
+      transform: translate(0);
+    }
+  }
+
+  &.is-closing {
+    .ui-sidebar__content {
+      transform: translate($ui-sidebar-min-width);
+    }
+  }
+}
