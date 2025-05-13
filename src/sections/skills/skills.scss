@@ -13,7 +13,7 @@
   &__grid {
     width: 100%;
     display: grid;
-    justify-items: center;
+    justify-items: normal;
     gap: $grid-gap-s;
     grid-template-columns: repeat(auto-fit, minmax($skill-card-min-w, 1fr));
     padding: var(--app-h-padding-small);
