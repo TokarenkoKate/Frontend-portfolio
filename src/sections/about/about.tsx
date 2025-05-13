@@ -20,11 +20,7 @@ export const About = () => {
       max
     >
       <div className="about__content">
-        <SectionHeader
-          title="About me"
-          icon={AboutIcon}
-          className="work__header"
-        />
+        <SectionHeader title="About me" icon={AboutIcon} />
 
         <div className="about__body">
           <UiVStack className="about__section about__section_first">

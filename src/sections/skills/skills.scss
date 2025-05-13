@@ -24,7 +24,7 @@ $card-side-panel-top: calc(
   }
 
   &__grid {
-    width: 100%;
+    width: var(--app-body-width);
     display: grid;
     justify-items: center;
     gap: var(--space-20);

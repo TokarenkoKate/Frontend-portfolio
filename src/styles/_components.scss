@@ -1,6 +1,16 @@
 :root {
-  --app-content-width: 1400px; // Width of content
+  /** components sizes */
+  --app-content-width: 1400px; // Max width of content
+  --app-body-width: 80vw; // Width of content
   --app-navbar-height: 50px; // Navbar fixed height
   --app-section-height: calc(100vh - var(--app-navbar-height));
   --app-section-header-height: 70px; // Navbar fixed height
+
+  /** paddings */
+  --app-h-padding: var(--space-10);
+  --app-h-padding-medium: var(--space-6);
+  --app-h-padding-small: var(--space-4);
+
+  /** text shadow */
+  --app-accent-text-shadow: 4px 3px 0 var(--color-text-secondary);
 }

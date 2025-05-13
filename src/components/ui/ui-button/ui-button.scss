@@ -1,20 +1,24 @@
+@use "/src/styles/mixins/responsive" as *;
+
 $button-size-m: 56px;
+$button-size-s: 40px;
 $button-size-m-width: 175px;
+$button-size-s-width: 120px;
 $button-border: 2px;
 $shift-1: 3px;
 $shift-2: 10px;
 $shift-3: 15px;
 
 .ui-button {
-  height: $button-size-m;
-  width: $button-size-m-width;
+  height: $button-size-s;
+  width: $button-size-s-width;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-1);
   flex-shrink: 0;
   position: relative;
-  padding: var(--space-1) var(--space-3);
+  padding: var(--space-0-5) var(--space-1);
   border: none;
   outline-color: transparent;
   transition: all 0.2s;
@@ -22,6 +26,12 @@ $shift-3: 15px;
   user-select: none;
   font-size: var(--fs-300);
   cursor: pointer;
+
+  @include responsive("medium") {
+    height: $button-size-m;
+    width: $button-size-m-width;
+    padding: var(--space-1) var(--space-3);
+  }
 
   svg {
     width: 30px;

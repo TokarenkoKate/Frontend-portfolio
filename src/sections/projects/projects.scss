@@ -10,12 +10,12 @@ $project-card-min-w: 400px;
   }
 
   &__grid {
-    width: 100%;
+    width: var(--app-body-width);
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax($project-card-min-w, 1fr));
     gap: var(--space-10);
-    padding: var(--space-16) var(--space-28);
+    padding: var(--space-16) 0;
   }
 
   .project-card {

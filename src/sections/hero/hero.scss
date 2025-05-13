@@ -1,93 +1,156 @@
-$shift-left: 20px;
-$shift-top: 10px;
-$border-w: 1px;
-$clip-content-percent: 8%;
-$description-border: 1px;
+@use "/src/styles/mixins/responsive" as *;
+
+$content-border: 1px;
+$content-left-shift: 100px;
+$content-top-shift: 200px;
 $image-height: 540px;
 
 .hero {
-  padding: var(--space-20);
   height: var(--app-section-height);
+  padding: var(--app-h-padding-small);
 
+  @include responsive("medium") {
+    padding: var(--app-h-padding-medium);
+  }
+
+  @include responsive("large") {
+    padding: var(--app-h-padding);
+  }
+
+  // main content wrapper
   &__content {
-    height: min-content;
-    position: relative;
+    --shift-left: 10px;
+    --shift-top: 10px;
 
-    &-inner {
-      width: 100%;
-      height: 100%;
-      padding: var(--space-14) var(--space-8);
-      gap: var(--space-4);
-      background-color: var(--color-secondary-dark);
-      overflow: hidden;
-      clip-path: shape(
-        from 0% 0%,
-        line to 100% 0%,
-        line to 100% 100%,
-        line to $clip-content-percent 100%,
-        line to $clip-content-percent 70%,
-        line to 0% 60%,
-        close
-      );
+    position: relative;
+    width: 100%;
+
+    @include responsive("large") {
+      --shift-left: 20px;
+
+      width: var(--app-body-width);
     }
 
+    // content background shadow
     &::after {
-      position: absolute;
-      content: "";
-      margin: $shift-top 0 0 0;
-      top: 0;
-      left: $clip-content-percent;
-      bottom: 0;
-      right: 0;
-      box-shadow: $shift-left $shift-top 0 0 var(--color-secondary-dark);
+      box-shadow: var(--shift-left) var(--shift-top) 0 0
+        var(--color-secondary-dark);
     }
 
     &::before {
+      box-shadow: calc(var(--shift-left) + ($content-border * 2))
+          calc(var(--shift-top) - ($content-border * 2)) var(--color-white),
+        calc(var(--shift-left) - ($content-border * 2))
+          calc(var(--shift-top) + ($content-border * 2)) var(--color-white),
+        calc(var(--shift-left) + ($content-border * 2))
+          calc(var(--shift-top) + ($content-border * 2)) var(--color-white);
+    }
+
+    &::after,
+    &::before {
       position: absolute;
       content: "";
-      margin: $shift-top 0 0 0;
       top: 0;
-      left: $clip-content-percent;
+      left: 0;
       bottom: 0;
       right: 0;
-      box-shadow: calc($shift-left + ($border-w * 2))
-          calc($shift-top - ($border-w * 2)) var(--color-white),
-        calc($shift-left - ($border-w * 2)) calc($shift-top + ($border-w * 2))
-          var(--color-white),
-        calc($shift-left + ($border-w * 2)) calc($shift-top + ($border-w * 2))
-          var(--color-white);
+      margin: var(--shift-top) 0 0 0;
+
+      @include responsive("large") {
+        left: $content-left-shift;
+      }
+    }
+
+    // main content wrapper
+    &-inner {
+      height: 100%;
+      position: relative;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--app-h-padding-small);
+      background-color: var(--color-white);
+      z-index: 1;
+
+      @include responsive("medium") {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: var(--space-10) var(--app-h-padding-medium);
+      }
+
+      @include responsive("large") {
+        padding: var(--space-14) var(--app-h-padding);
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: $content-border;
+        left: $content-border;
+        width: calc(100% - ($content-border * 2));
+        height: calc(100% - ($content-border * 2));
+        background-color: var(--color-primary);
+        z-index: -1;
+      }
+
+      &,
+      &::before {
+        clip-path: none;
+
+        @include responsive("large") {
+          clip-path: shape(
+            from 0% 0%,
+            line to 100% 0%,
+            line to 100% 100%,
+            line to calc(0% + $content-left-shift) 100%,
+            line to calc(0% + $content-left-shift)
+              calc(100% - $content-top-shift),
+            line to 0% 60%,
+            close
+          );
+        }
+      }
     }
 
     &-column {
       height: 100%;
       flex: 1;
-      justify-content: space-between;
-    }
-  }
+      gap: var(--space-4);
 
-  &__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
+      @include responsive("large") {
+        gap: var(--space-8);
+      }
+    }
   }
 
   &__titles {
     gap: var(--space-2);
     text-transform: uppercase;
+    align-items: center;
 
-    p:last-of-type {
-      text-shadow: 4px 3px 0 var(--color-text-secondary);
+    @include responsive("medium") {
+      align-items: flex-start;
+    }
+
+    .hero__title {
+      &_accent {
+        text-shadow: var(--app-accent-text-shadow);
+        white-space: nowrap;
+
+        @include responsive("large") {
+          width: auto;
+        }
+      }
     }
   }
 
   &__details {
-    max-width: 600px;
-    margin-left: 80px;
+    margin-left: none;
     gap: var(--space-8);
+
+    @include responsive("large") {
+      margin-left: var(--space-24);
+    }
   }
 
   &__description {
@@ -99,10 +162,10 @@ $image-height: 540px;
     &::before {
       position: absolute;
       content: "";
-      bottom: $description-border;
-      left: $description-border;
-      width: calc(100% - ($description-border * 2));
-      height: calc(100% - ($description-border * 2));
+      bottom: $content-border;
+      left: $content-border;
+      width: calc(100% - ($content-border * 2));
+      height: calc(100% - ($content-border * 2));
       background-color: var(--color-secondary);
       z-index: -1;
     }
@@ -122,11 +185,23 @@ $image-height: 540px;
 
   &__buttons {
     gap: var(--space-3);
-    align-self: flex-end;
+    align-self: center;
+
+    @include responsive("small") {
+      align-self: flex-end;
+    }
   }
 
   &__image {
+    max-height: $image-height;
+    flex: 1;
+    object-fit: cover;
+    object-position: top;
     border: 1px solid var(--color-border);
-    height: $image-height;
+    aspect-ratio: 1;
+
+    @include responsive("medium") {
+      aspect-ratio: auto;
+    }
   }
 }

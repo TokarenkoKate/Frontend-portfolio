@@ -32,7 +32,7 @@ $contribution-day-size: 10px;
   }
 
   &__content {
-    width: 80vw;
+    width: var(--app-body-width);
   }
 
   //  sections reusable styles
