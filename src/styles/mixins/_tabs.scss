@@ -10,3 +10,16 @@
     top: calc($tabIndex * ($panelHeight + $panelsGap) + $panelsTopPadding);
   }
 }
+
+@mixin tabPanelLeftPosition(
+  $tabIndex,
+  $panelWidth,
+  $panelsLeftPadding,
+  $panelsGap
+) {
+  @if $tabIndex == 0 {
+    left: $panelsLeftPadding;
+  } @else {
+    left: calc($tabIndex * ($panelWidth + $panelsGap) + $panelsLeftPadding);
+  }
+}

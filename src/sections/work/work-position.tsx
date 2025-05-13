@@ -27,21 +27,29 @@ export const WorkPosition = ({
   };
 
   return (
-    <UiVStack className="work-position-card" as="li" onClick={onClick}>
+    <UiVStack
+      className="work-position-card"
+      as="li"
+      justify="between"
+      onClick={onClick}
+      max
+    >
       <UiHStack align="center" className="work-position-card__header">
         <UiIcon Svg={icon} className="work-position-card__icon" />
         <UiText variant="body-lg">{title}</UiText>
       </UiHStack>
-      <div className="work-position-card__divider" />
-      <UiVStack className="work-position-card__column" align="normal" max>
-        <UiHStack className="work-position-card__row" justify="between">
-          <UiText>Company</UiText>
-          <UiText>{company}</UiText>
-        </UiHStack>
-        <UiHStack className="work-position-card__row" justify="between">
-          <UiText>Duration</UiText>
-          <UiText>{duration}</UiText>
-        </UiHStack>
+      <UiVStack max>
+        <div className="work-position-card__divider" />
+        <UiVStack className="work-position-card__column" align="normal" max>
+          <UiHStack className="work-position-card__row" justify="between">
+            <UiText>Company</UiText>
+            <UiText>{company}</UiText>
+          </UiHStack>
+          <UiHStack className="work-position-card__row" justify="between">
+            <UiText>Duration</UiText>
+            <UiText>{duration}</UiText>
+          </UiHStack>
+        </UiVStack>
       </UiVStack>
     </UiVStack>
   );

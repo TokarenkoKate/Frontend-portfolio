@@ -1,0 +1,26 @@
+/** tab panel sizes (accent line, moving on tabs change) */
+$tab-panel-size: var(--space-4);
+$tabs-gap: var(--space-6);
+
+/** gaps between cards */
+$cards-gap: var(--space-6);
+$cards-gap-s: var(--space-2);
+
+/** cards list paddings */
+$list-vt-p: var(--space-4);
+$list-hr-p: var(--space-8);
+$list-vt-p-s: var(--space-2);
+$list-hr-p-s: var(--space-4);
+
+/** card sizes */
+$card-width: 360px;
+$card-width-s: calc((100% - ($list-hr-p-s * 2) - $cards-gap-s) / 2);
+$card-height: 200px;
+
+/** cards paddings */
+$card-p: var(--space-5);
+$card-p-s: var(--space-2);
+
+/** card icon sizes */
+$card-icon-size-s: 14px;
+$card-icon-size: 20px;

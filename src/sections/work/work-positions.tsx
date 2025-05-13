@@ -18,8 +18,14 @@ export const WorkPositions = ({
   } as CSSProperties;
 
   return (
-    <UiHStack>
-      <UiVStack as="ul" className="work__positions" style={styleVariables}>
+    <UiHStack max>
+      <UiVStack
+        as="ul"
+        className="work__positions"
+        style={styleVariables}
+        align="normal"
+        max
+      >
         {workExperienceItems.map((workPosition, workPositionIndex) => {
           return (
             <WorkPosition

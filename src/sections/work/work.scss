@@ -1,61 +1,102 @@
 @use "/src/styles/mixins/tabs" as *;
-
-$card-width: 360px;
-$card-height: 200px;
-$card-v-p: var(--space-4);
-$card-h-p: var(--space-8);
-$card-icon-size: var(--space-5);
-$tab-panel-w: var(--space-4);
-$tabs-gap: var(--space-6);
+@use "/src/styles/mixins/responsive" as *;
+@import "./constants";
 
 .work {
-  height: var(--app-section-height);
-  border: 1px solid var(--color-white);
+  height: 100%;
+  min-height: var(--app-section-height);
+  border: var(--app-border);
 
+  /** main section header */
   &__header {
+    border-top: none;
     border-left: none;
     border-right: none;
   }
 
+  /** main section content wrapper */
   &__body {
+    width: 100%;
     height: 100%;
-  }
+    flex-direction: column;
+    gap: var(--space-4);
 
-  &__positions {
-    position: relative;
-    gap: var(--space-6);
-    padding: $card-v-p $card-h-p;
-
-    &::after {
-      width: $tab-panel-w;
-      height: $card-height;
-      position: absolute;
-      right: $tab-panel-w;
-      content: "";
-      background-color: var(--color-accent);
-      transition: 0.2s top ease;
-
-      @include tabPanelTopPosition(
-        var(--working-position-index),
-        $card-height,
-        $card-v-p,
-        $tabs-gap
-      );
+    @include responsive("large") {
+      flex-direction: row;
+      width: auto;
+      gap: none;
     }
   }
 
+  /** position cards list */
+  &__positions {
+    position: relative;
+    flex-direction: row;
+    gap: $cards-gap-s;
+    padding: $list-vt-p-s $list-hr-p-s;
+
+    @include responsive("large") {
+      flex-direction: column;
+      gap: $cards-gap;
+      padding: $list-vt-p $list-hr-p;
+    }
+
+    /** tab panel (accent line, moving on tabs change) */
+    &::after {
+      position: absolute;
+      content: "";
+      width: $card-width-s;
+      height: $tab-panel-size;
+      top: unset;
+      bottom: calc($list-vt-p-s * -1);
+      background-color: var(--color-accent);
+      transition: 0.2s all ease;
+
+      /** --working-position-index variable is dynamic,
+      passed from component state */
+      @include tabPanelLeftPosition(
+        var(--working-position-index),
+        $card-width-s,
+        $list-hr-p-s,
+        $cards-gap-s
+      );
+
+      @include responsive("large") {
+        width: $tab-panel-size;
+        height: $card-height;
+        bottom: unset;
+        right: $tab-panel-size;
+        left: unset;
+
+        @include tabPanelTopPosition(
+          var(--working-position-index),
+          $card-height,
+          $list-vt-p,
+          $tabs-gap
+        );
+      }
+    }
+  }
+
+  /** position card styles */
   &-position-card {
-    width: $card-width;
-    height: $card-height;
+    min-width: auto;
+    height: auto;
+    padding: $card-p-s;
     background: var(--color-secondary);
-    padding: var(--space-5);
-    transition: 0.2s ease;
     border: 1px solid transparent;
+    transition: 0.2s ease;
     cursor: pointer;
 
     &:hover {
       background-color: var(--color-secondary-dark);
       border-color: var(--color-white);
+    }
+
+    @include responsive("medium") {
+      min-width: $card-width;
+      height: $card-height;
+      padding: $card-p;
     }
 
     &__header {
@@ -64,8 +105,13 @@ $tabs-gap: var(--space-6);
     }
 
     &__icon {
-      min-width: $card-icon-size;
-      height: $card-icon-size;
+      min-width: $card-icon-size-s;
+      height: $card-icon-size-s;
+
+      @include responsive("medium") {
+        min-width: $card-icon-size;
+        height: $card-icon-size;
+      }
     }
 
     &__divider {
@@ -78,13 +124,26 @@ $tabs-gap: var(--space-6);
     &__column {
       gap: var(--space-4);
     }
+
+    &__row {
+      flex-direction: column;
+
+      @include responsive("medium") {
+        flex-direction: row;
+      }
+    }
   }
 
   &__responsibilities {
     height: 100%;
-    padding: var(--space-4) var(--space-8);
-    border-left: 1px solid var(--color-white);
+    padding: var(--space-2) var(--space-4);
+    border-left: none;
     max-width: 800px;
+
+    @include responsive("large") {
+      padding: var(--space-4) var(--space-8);
+      border-left: var(--app-border);
+    }
 
     &-title {
       margin-bottom: var(--space-8);
