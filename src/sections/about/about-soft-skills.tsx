@@ -5,15 +5,15 @@ import { UiText } from "@/components/ui/ui-text/ui-text";
 
 export const AboutSoftSkills = () => {
   return (
-    <UiVStack className="about__soft-skills" max align="normal">
+    <UiVStack max align="normal">
       <UiHStack className="about__section-header">
         <UiText variant="heading-xs" accent>
           Soft skills
         </UiText>
       </UiHStack>
-      <div className="about__section-body">
+      <UiHStack className="about__section-body" align="center" justify="center">
         <img src={SoftSkills} alt="soft-skills" />
-      </div>
+      </UiHStack>
     </UiVStack>
   );
 };

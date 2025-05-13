@@ -16,7 +16,7 @@ $card-side-panel-top: calc(
 
 .skills {
   height: var(--app-section-height);
-  border: 1px solid var(--color-white);
+  border: var(--app-border);
 
   &__header {
     border-left: none;

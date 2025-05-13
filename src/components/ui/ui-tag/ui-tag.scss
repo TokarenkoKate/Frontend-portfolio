@@ -14,6 +14,6 @@
 
   &.solid {
     --ui-tag-background: var(--color-secondary-dark);
-    --ui-tag-border-color: 1px solid var(--color-white);
+    --ui-tag-border-color: var(--app-border);
   }
 }

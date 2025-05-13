@@ -20,15 +20,21 @@ export const About = () => {
       max
     >
       <div className="about__content">
-        <SectionHeader title="About me" icon={AboutIcon} />
-
+        <SectionHeader
+          title="About me"
+          icon={AboutIcon}
+          className="about__header"
+        />
         <div className="about__body">
-          <UiVStack className="about__section about__section_first">
+          <UiVStack
+            className="about__section about__section_first"
+            justify="between"
+          >
             <AboutList />
             <AboutDetailsHeader />
           </UiVStack>
           <UiVStack className="about__section about__section_second">
-            <UiHStack>
+            <UiHStack className="about__picture-skills-row" align="normal">
               <AboutPhoto />
               <AboutSoftSkills />
             </UiHStack>

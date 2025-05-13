@@ -2,7 +2,7 @@ $project-card-min-w: 400px;
 
 .projects {
   min-height: var(--app-section-height);
-  border: 1px solid var(--color-white);
+  border: var(--app-border);
 
   &__header {
     border-left: none;
@@ -19,7 +19,7 @@ $project-card-min-w: 400px;
   }
 
   .project-card {
-    border: 1px solid var(--color-white);
+    border: var(--app-border);
     width: $project-card-min-w;
 
     &__image {
