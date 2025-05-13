@@ -123,8 +123,12 @@ $shift-3: 15px;
 
   &.round {
     padding: 0;
-    width: $button-size-m;
+    width: $button-size-s;
     border-radius: 50%;
     clip-path: none;
+
+    @include responsive("medium") {
+      width: $button-size-m;
+    }
   }
 }

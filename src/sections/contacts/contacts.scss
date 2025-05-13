@@ -1,18 +1,36 @@
-$shift-top: 10px;
-$shift-left: 20px;
+@use "/src/styles/mixins/responsive" as *;
 
 .contacts {
-  padding: var(--space-6);
+  --shift-top: 6px;
+  --shift-left: 10px;
+
+  padding: var(--app-h-padding-small);
   height: var(--app-section-height);
+
+  @include responsive("medium") {
+    --shift-top: 10px;
+    --shift-left: 20px;
+
+    padding: var(--app-h-padding-medium);
+  }
+
+  @include responsive("large") {
+    padding: var(--app-h-padding);
+  }
 
   &__body {
     position: relative;
     z-index: 1;
-    width: var(--app-body-width);
+    width: 100%;
     gap: var(--space-4);
-    padding: var(--space-16) var(--space-14);
+    padding: var(--space-10) var(--space-8);
     border: var(--app-border);
     background-color: var(--color-secondary);
+
+    @include responsive("large") {
+      padding: var(--space-16) var(--space-14);
+      width: var(--app-body-width);
+    }
 
     &::before,
     &::after {
@@ -23,22 +41,28 @@ $shift-left: 20px;
     }
 
     &::before {
-      top: $shift-left;
+      top: var(--shift-top);
       left: 100%;
-      width: $shift-left;
-      height: calc(100% - $shift-top);
+      width: var(--shift-left);
+      height: 100%;
     }
 
     &::after {
       top: 100%;
-      left: $shift-left;
-      width: calc(100% - $shift-left);
-      height: $shift-top;
+      left: var(--shift-left);
+      width: calc(100% - var(--shift-left));
+      height: var(--shift-top);
     }
   }
 
   &__socials {
-    gap: var(--space-16);
+    gap: var(--space-4);
+    flex-direction: column;
+
+    @include responsive("medium") {
+      gap: var(--space-16);
+      flex-direction: row;
+    }
   }
 
   &__links {
