@@ -1,0 +1,12 @@
+.footer {
+  height: var(--app-footer-height);
+  background-color: var(--color-secondary-dark);
+
+  &__content {
+    height: 100%;
+    max-width: var(--app-content-width);
+    padding: var(--space-4);
+    margin: 0 auto;
+    gap: var(--space-2);
+  }
+}

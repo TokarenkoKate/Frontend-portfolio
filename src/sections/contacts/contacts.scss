@@ -5,7 +5,7 @@
   --shift-left: 10px;
 
   padding: var(--app-h-padding-small);
-  height: var(--app-section-height);
+  height: calc(var(--app-section-height) - var(--app-footer-height));
 
   @include responsive("medium") {
     --shift-top: 10px;

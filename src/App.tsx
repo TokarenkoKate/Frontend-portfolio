@@ -20,8 +20,8 @@ export const App = () => {
           <Skills />
           <Projects />
           <Contacts />
+          <Footer />
         </main>
-        <Footer />
       </div>
     </div>
   );
