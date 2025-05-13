@@ -1,21 +1,8 @@
-$skill-card-min-w: 300px;
-$skill-card-border: 4px;
-$shift-1: 5px;
-$shift-2: 10px;
-$shift-3: 15px;
-$shift-4: 18px;
-$shift-5: 36px;
-$shift-6: 50px;
-$shift-7: 80px;
-$shift-8: 90px;
-$card-side-panel-width: 5px;
-$card-side-panel-height: calc((100% - ($shift-4 * 2)) * 0.8);
-$card-side-panel-top: calc(
-  (100% - ($shift-4 * 2) - $card-side-panel-height) / 2 + $shift-4
-);
+@use "/src/styles/mixins/responsive" as *;
+@import "./constants";
 
 .skills {
-  height: var(--app-section-height);
+  min-height: var(--app-section-height);
   border: var(--app-border);
 
   &__header {
@@ -24,12 +11,23 @@ $card-side-panel-top: calc(
   }
 
   &__grid {
-    width: var(--app-body-width);
+    width: 100%;
     display: grid;
     justify-items: center;
-    gap: var(--space-20);
+    gap: $grid-gap-s;
     grid-template-columns: repeat(auto-fit, minmax($skill-card-min-w, 1fr));
-    padding: var(--space-16) var(--space-28);
+    padding: var(--app-h-padding-small);
+
+    @include responsive("medium") {
+      padding: var(--app-h-padding-medium);
+      gap: $grid-gap-m;
+    }
+
+    @include responsive("large") {
+      width: var(--app-body-width);
+      padding: var(--app-h-padding);
+      gap: $grid-gap;
+    }
   }
 
   .skill-card {
@@ -73,8 +71,8 @@ $card-side-panel-top: calc(
     }
 
     &__header {
-      margin-bottom: var(--space-8);
-      gap: var(--space-6);
+      margin-bottom: $skill-card-header-mr;
+      gap: $skill-card-header-gap;
     }
 
     &__title {
@@ -82,10 +80,10 @@ $card-side-panel-top: calc(
     }
 
     &__icon {
+      width: $skill-card-icon-w;
+      height: $skill-card-icon-h;
       padding: var(--space-4);
       background-color: var(--color-accent);
-      width: 50px;
-      height: 42px;
       clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     }
 

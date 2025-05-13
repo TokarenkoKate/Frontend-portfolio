@@ -1,0 +1,30 @@
+/** grid gaps */
+$grid-gap: var(--space-20);
+$grid-gap-m: var(--space-10);
+$grid-gap-s: var(--space-4);
+
+/** card sizes */
+$skill-card-min-w: 300px;
+$skill-card-border: 4px;
+$skill-card-header-mr: var(--space-8);
+$skill-card-header-gap: var(--space-6);
+$skill-card-icon-w: 50px;
+$skill-card-icon-h: 42px;
+
+/** card clip path shifts */
+$shift-1: 5px;
+$shift-2: 10px;
+$shift-3: 15px;
+$shift-4: 18px;
+$shift-5: 36px;
+$shift-6: 50px;
+$shift-7: 80px;
+$shift-8: 90px;
+
+/** decorative card line sizes
+that is located at the left and right size of a card */
+$card-side-panel-width: 5px;
+$card-side-panel-height: calc((100% - ($shift-4 * 2)) * 0.8);
+$card-side-panel-top: calc(
+  (100% - ($shift-4 * 2) - $card-side-panel-height) / 2 + $shift-4
+);
