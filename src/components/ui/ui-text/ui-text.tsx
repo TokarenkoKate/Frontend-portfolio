@@ -42,9 +42,9 @@ export const UiText = (props: UiTextProps) => {
     className
   );
 
-  const styleVariables: CSSProperties = {
+  const styleVariables = {
     "--no-of-lines": lineClamp,
-  };
+  } as CSSProperties;
 
   const UiTextComponent = as;
 
