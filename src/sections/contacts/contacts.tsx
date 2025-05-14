@@ -22,7 +22,13 @@ export const Contacts = () => {
         </UiText>
         <UiText accent>kate.tokarenko8@gmail.com</UiText>
         <UiHStack className="contacts__socials">
-          <UiButton variant="outlined">Send and email</UiButton>
+          <UiButton
+            variant="outlined"
+            asLink
+            href="mailto:kate.tokarenko8@gmail.com"
+          >
+            Send and email
+          </UiButton>
           <UiHStack className="contacts__links">
             {contactDetails.map(({ href, icon }) => (
               <UiButton href={href} asLink round key={href}>

@@ -6,6 +6,7 @@ import type {
 
 export type UiButtonVariant = "background" | "outlined" | "clear";
 export type UiButtonDirection = "left" | "middle" | "right";
+export type UiButtonSize = "small" | "medium";
 
 type ExternalNavigationProps = Pick<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -17,6 +18,7 @@ export interface UiButtonProps
     ExternalNavigationProps {
   children?: ReactNode | string;
   variant?: UiButtonVariant;
+  size?: UiButtonSize;
   round?: boolean;
   disabled?: boolean;
   asLink?: boolean;

@@ -3,6 +3,9 @@ import { UiVStack } from "@/components/ui/ui-stack/ui-vstack/ui-vstack";
 import { UiTag } from "@/components/ui/ui-tag/ui-tag";
 import { UiText } from "@/components/ui/ui-text/ui-text";
 import { ProjectCardFeature } from "./project-card-feature";
+import { UiButton } from "@/components/ui/ui-button/ui-button";
+import { UiIcon } from "@/components/ui/ui-icon/ui-icon";
+import Git from "@/assets/icons/socials/git.svg";
 
 type ProjectCardProps = {
   title: string;
@@ -10,6 +13,7 @@ type ProjectCardProps = {
   description: string;
   technologies: string[];
   features: string[];
+  link?: string;
 };
 
 export const ProjectCard = ({
@@ -18,6 +22,7 @@ export const ProjectCard = ({
   description,
   technologies,
   features,
+  link,
 }: ProjectCardProps) => {
   return (
     <UiVStack className="project-card">
@@ -38,14 +43,21 @@ export const ProjectCard = ({
             <UiTag key={technology}>{technology}</UiTag>
           ))}
         </UiHStack>
-        <UiVStack as="ul" className="project-card__features">
-          {features.map((feature) => {
-            return (
-              <li key={feature}>
-                <ProjectCardFeature feature={feature} />
-              </li>
-            );
-          })}
+        <UiVStack className="project-card__column" justify="between">
+          <UiVStack as="ul" className="project-card__features">
+            {features.map((feature) => {
+              return (
+                <li key={feature}>
+                  <ProjectCardFeature feature={feature} />
+                </li>
+              );
+            })}
+          </UiVStack>
+          {link && (
+            <UiButton href={link} asLink variant="outlined" size="small">
+              <UiIcon Svg={Git} />
+            </UiButton>
+          )}
         </UiVStack>
       </UiVStack>
     </UiVStack>

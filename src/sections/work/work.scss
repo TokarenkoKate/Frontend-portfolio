@@ -82,6 +82,7 @@
   &-position-card {
     min-width: auto;
     height: auto;
+    flex: 1;
     padding: $card-p-s;
     background: var(--color-secondary);
     border: 1px solid transparent;
@@ -95,6 +96,7 @@
 
     @include responsive("medium") {
       min-width: $card-width;
+      min-height: $card-height;
       height: $card-height;
       padding: $card-p;
     }

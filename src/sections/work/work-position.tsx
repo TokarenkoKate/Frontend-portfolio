@@ -32,7 +32,6 @@ export const WorkPosition = ({
       as="li"
       justify="between"
       onClick={onClick}
-      max
     >
       <UiHStack align="center" className="work-position-card__header">
         <UiIcon Svg={icon} className="work-position-card__icon" />

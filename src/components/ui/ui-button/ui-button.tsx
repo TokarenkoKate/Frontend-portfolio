@@ -10,6 +10,7 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
     const {
       children,
       variant = "background",
+      size = "medium",
       direction = "middle",
       round,
       className,
@@ -23,6 +24,7 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
     const mods = {
       [variant]: variant,
       [direction]: direction,
+      [size]: size,
       round: round,
     };
 

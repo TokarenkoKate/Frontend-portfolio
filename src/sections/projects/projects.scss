@@ -37,15 +37,18 @@
   }
 
   .project-card {
-    border: var(--app-border);
     width: var(--project-card-min-w);
+    border: var(--app-border);
 
     &__image {
       width: 100%;
       height: calc(var(--project-card-min-w) / (3 / 2));
+      object-fit: cover;
+      object-position: top;
     }
 
     &__body {
+      height: 100%;
       width: 100%;
       padding: var(--space-2) var(--space-6);
       gap: var(--space-4);
@@ -71,6 +74,15 @@
 
       &_highlight {
         background-color: var(--color-accent);
+      }
+    }
+
+    &__column {
+      height: 100%;
+      gap: var(--space-4);
+
+      a {
+        align-self: flex-end;
       }
     }
   }

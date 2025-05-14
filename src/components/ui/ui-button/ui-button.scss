@@ -12,8 +12,8 @@ $shift-2: 10px;
 $shift-3: 15px;
 
 .ui-button {
-  height: $button-size-s;
   width: $button-size-s-width;
+  height: $button-size-s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +43,12 @@ $shift-3: 15px;
       width: $button-icon-size;
       height: $button-icon-size;
     }
+  }
+
+  /** variants */
+  &.small {
+    width: $button-size-s-width;
+    height: $button-size-s;
   }
 
   /** variants */

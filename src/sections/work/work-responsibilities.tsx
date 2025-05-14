@@ -9,7 +9,7 @@ export const WorkResponsibilities = ({
   responsibilities,
 }: WorkResponsibilitiesProps) => {
   return (
-    <UiVStack className="work__responsibilities">
+    <UiVStack className="work__responsibilities" max>
       <UiText variant="heading-sm" className="work__responsibilities-title">
         Responsibilities:
       </UiText>

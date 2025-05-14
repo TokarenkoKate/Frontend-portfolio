@@ -1,4 +1,6 @@
-import LinkedIn from "@/assets/icons/linkedin.svg";
+import LinkedIn from "@/assets/icons/socials/linkedin.svg";
+import Git from "@/assets/icons/socials/git.svg";
+import Telegram from "@/assets/icons/socials/telegram.svg";
 
 export const contactDetails = [
   {
@@ -6,15 +8,11 @@ export const contactDetails = [
     href: "https://www.linkedin.com/in/kate-tokarenko/",
   },
   {
-    icon: LinkedIn,
-    href: "https://www.linkedin.com/in/kate-tokarenko/1",
+    icon: Git,
+    href: "https://github.com/TokarenkoKate",
   },
   {
-    icon: LinkedIn,
-    href: "https://www.linkedin.com/in/kate-tokarenko/2",
-  },
-  {
-    icon: LinkedIn,
-    href: "https://www.linkedin.com/in/kate-tokarenko/3",
+    icon: Telegram,
+    href: "https://t.me/kate_tokarenko",
   },
 ];

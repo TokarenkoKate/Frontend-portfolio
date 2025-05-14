@@ -13,7 +13,7 @@ export const Projects = () => {
       id="projects"
     >
       <SectionHeader
-        title="Featured projects"
+        title="Selected projects throughout my career"
         icon={SkillsIcon}
         className="projects__header"
       />
