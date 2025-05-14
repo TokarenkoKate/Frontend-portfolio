@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  opacity: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
     linear-gradient(
       90deg,
@@ -54,8 +55,8 @@ body {
     margin: 0 auto;
     flex: 1;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     // scroll-snap-type: y mandatory;
-    // scroll-behavior: smooth;
   }
 
   .panel {
