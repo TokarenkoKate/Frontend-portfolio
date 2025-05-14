@@ -3,9 +3,13 @@
 @import "./constants";
 
 .work {
-  height: 100%;
+  height: auto;
   min-height: var(--app-section-height);
   border: var(--app-border);
+
+  @include responsive("large") {
+    height: 100%;
+  }
 
   /** main section header */
   &__header {
