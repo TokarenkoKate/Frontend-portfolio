@@ -43,7 +43,7 @@ export const workExperienceItems = [
   {
     title: "Frontend developer",
     company: "Intelogis",
-    duration: "Feb 2023 – Aug 2023",
+    duration: "Aug 2023 – Apl 2025",
     responsibilities: [
       "Designed modular and reusable components for managing cargo transportation orders, enhancing the efficiency of order processing.",
       "Created complex form components with dynamic validation and conditional rendering, improving data collection efficiency.",
