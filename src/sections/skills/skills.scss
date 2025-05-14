@@ -56,24 +56,24 @@
 
     &,
     &::before {
-      clip-path: shape(
-        from 0% calc(0% + $shift-4),
-        line to calc(0% + $shift-2) calc(0% + $shift-2),
-        line to calc(0% + $shift-5) calc(0% + $shift-2),
-        line to calc(0% + $shift-6) 0%,
-        line to calc(0% + $shift-7) 0%,
-        line to calc(0% + $shift-8) calc(0% + $shift-1),
-        line to calc(100% - $shift-8) calc(0% + $shift-1),
-        line to calc(100% - $shift-7) 0%,
-        line to calc(100% - $shift-6) 0%,
-        line to calc(100% - $shift-5) calc(0% + $shift-2),
-        line to calc(100% - $shift-2) calc(0% + $shift-2),
-        line to 100% calc(0% + $shift-4),
-        line to 100% calc(100% - $shift-3),
-        line to calc(100% - $shift-3) 100%,
-        line to calc(0% + $shift-3) 100%,
-        line to 0% calc(100% - $shift-3),
-        line to 0% 100%
+      clip-path: polygon(
+        0% calc(0% + #{$shift-4}),
+        calc(0% + #{$shift-2}) calc(0% + #{$shift-2}),
+        calc(0% + #{$shift-5}) calc(0% + #{$shift-2}),
+        calc(0% + #{$shift-6}) 0%,
+        calc(0% + #{$shift-7}) 0%,
+        calc(0% + #{$shift-8}) calc(0% + #{$shift-1}),
+        calc(100% - #{$shift-8}) calc(0% + #{$shift-1}),
+        calc(100% - #{$shift-7}) 0%,
+        calc(100% - #{$shift-6}) 0%,
+        calc(100% - #{$shift-5}) calc(0% + #{$shift-2}),
+        calc(100% - #{$shift-2}) calc(0% + #{$shift-2}),
+        100% calc(0% + #{$shift-4}),
+        100% calc(100% - #{$shift-3}),
+        calc(100% - #{$shift-3}) 100%,
+        calc(0% + #{$shift-3}) 100%,
+        0% calc(100% - #{$shift-3}),
+        0% 100%
       );
     }
 
@@ -106,23 +106,21 @@
       left: 0;
       width: $card-side-panel-width;
       background-color: var(--color-accent);
-      clip-path: shape(
-        from 0% 0%,
-        line to 100% calc(0% + $shift-1),
-        line to 100% calc(100% - $shift-1),
-        line to 0% 100%,
-        close
+      clip-path: polygon(
+        0% 0%,
+        100% calc(0% + #{$shift-1}),
+        100% calc(100% - #{$shift-1}),
+        0% 100%
       );
 
       &_right {
         left: unset;
         right: 0;
-        clip-path: shape(
-          from 0% calc(0% + $shift-1),
-          line to 100% 0%,
-          line to 100% 100%,
-          line to 0% calc(100% - $shift-1),
-          close
+        clip-path: polygon(
+          0% calc(0% + #{$shift-1}),
+          100% 0%,
+          100% 100%,
+          0% calc(100% - #{$shift-1})
         );
       }
     }

@@ -6,10 +6,12 @@ $content-top-shift: 200px;
 $image-height: 540px;
 
 .hero {
-  height: var(--app-section-height);
+  height: auto;
+  min-height: var(--app-section-height);
   padding: var(--app-h-padding-small);
 
   @include responsive("medium") {
+    height: 100%;
     padding: var(--app-h-padding-medium);
   }
 
@@ -98,15 +100,13 @@ $image-height: 540px;
         clip-path: none;
 
         @include responsive("large") {
-          clip-path: shape(
-            from 0% 0%,
-            line to 100% 0%,
-            line to 100% 100%,
-            line to calc(0% + $content-left-shift) 100%,
-            line to calc(0% + $content-left-shift)
-              calc(100% - $content-top-shift),
-            line to 0% 60%,
-            close
+          clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            calc(0% + #{$content-left-shift}) 100%,
+            calc(0% + #{$content-left-shift}) calc(100% - #{$content-top-shift}),
+            0% 60%
           );
         }
       }
@@ -172,13 +172,12 @@ $image-height: 540px;
 
     &,
     &::before {
-      clip-path: shape(
-        from 0% 0%,
-        line to 100% 0%,
-        line to 100% calc(100% - 20px),
-        line to calc(100% - 20px) 100%,
-        line to 0% 100%,
-        close
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0% 100%
       );
     }
   }

@@ -12,8 +12,8 @@ $shift-2: 10px;
 $shift-3: 15px;
 
 .ui-button {
-  width: $button-size-s-width;
   height: $button-size-s;
+  width: $button-size-s-width;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -43,12 +43,6 @@ $shift-3: 15px;
       width: $button-icon-size;
       height: $button-icon-size;
     }
-  }
-
-  /** variants */
-  &.small {
-    width: $button-size-s-width;
-    height: $button-size-s;
   }
 
   /** variants */
@@ -105,39 +99,37 @@ $shift-3: 15px;
 
   &,
   &::before {
-    clip-path: shape(
-      from calc(0% + $shift-1) 0%,
-      line to calc(100% - $shift-1) 0%,
-      line to calc(100% - $shift-1) calc(50% - $shift-3),
-      line to 100% calc(50% - $shift-2),
-      line to 100% calc(50% + $shift-2),
-      line to calc(100% - $shift-1) calc(50% + $shift-3),
-      line to calc(100% - $shift-1) 100%,
-      line to calc(0% + $shift-1) 100%,
-      line to calc(0% + $shift-1) calc(50% + $shift-3),
-      line to 0% calc(50% + $shift-2),
-      line to 0% calc(50% - $shift-2),
-      line to calc(0% + $shift-1) calc(50% - $shift-3),
-      close
+    clip-path: polygon(
+      calc(0% + #{$shift-1}) 0%,
+      calc(100% - #{$shift-1}) 0%,
+      calc(100% - #{$shift-1}) calc(50% - #{$shift-3}),
+      100% calc(50% - #{$shift-2}),
+      100% calc(50% + #{$shift-2}),
+      calc(100% - #{$shift-1}) calc(50% + #{$shift-3}),
+      calc(100% - #{$shift-1}) 100%,
+      calc(0% + #{$shift-1}) 100%,
+      calc(0% + #{$shift-1}) calc(50% + #{$shift-3}),
+      0% calc(50% + #{$shift-2}),
+      0% calc(50% - #{$shift-2}),
+      calc(0% + #{$shift-1}) calc(50% - #{$shift-3})
     );
   }
 
   &.right,
   &.right::before {
-    clip-path: shape(
-      from 0% 0%,
-      line to calc(100% - $shift-1) 0%,
-      line to calc(100% - $shift-1) calc(50% - $shift-3),
-      line to 100% calc(50% - $shift-2),
-      line to 100% calc(50% + $shift-2),
-      line to calc(100% - $shift-1) calc(50% + $shift-3),
-      line to calc(100% - $shift-1) 100%,
-      line to 0% 100%,
-      line to 0% calc(50% + $shift-3),
-      line to calc(0% + $shift-1) calc(50% + $shift-2),
-      line to calc(0% + $shift-1) calc(50% - $shift-2),
-      line to 0% calc(50% - $shift-3),
-      close
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - #{$shift-1}) 0%,
+      calc(100% - #{$shift-1}) calc(50% - #{$shift-3}),
+      100% calc(50% - #{$shift-2}),
+      100% calc(50% + #{$shift-2}),
+      calc(100% - #{$shift-1}) calc(50% + #{$shift-3}),
+      calc(100% - #{$shift-1}) 100%,
+      0% 100%,
+      0% calc(50% + #{$shift-3}),
+      calc(0% + #{$shift-1}) calc(50% + #{$shift-2}),
+      calc(0% + #{$shift-1}) calc(50% - #{$shift-2}),
+      0% calc(50% - #{$shift-3})
     );
   }
 
